@@ -59,7 +59,11 @@
         <configuration>
             <source>1.8</source>
             <target>1.8</target>
+            <properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>   
+            </properties>
         </configuration>
+        
     </plugin>
             </plugins>		
 		<finalName>ROOT</finalName>
