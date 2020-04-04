@@ -1,21 +1,14 @@
-## YAML Template.
----
 version: 0.2
+
 phases:
-  pre_build:
-    commands:
-    - echo "Entered the pre-build phase"
-  build:
-    commands:
-    - echo "Entered build phase"
-    - mvn package
-    - ls
-    - (cd target && ls)
-    - (cd target/ROOT && ls)
-    
+  install:
+    runtime-versions:
+      java: corretto11
   post_build:
     commands:
-    - echo "Entered the post-build phase"
-    artifacts:
-      files:
-        - '**/*'
+      - mvn package
+      - mv target/my-web-app.war my-web-app.war
+artifacts:
+  files:
+    - my-web-app.war
+    - .ebextensions/**/*
