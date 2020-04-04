@@ -18,4 +18,4 @@ phases:
     - echo "Entered the post-build phase"
     artifacts:
       files:
-        - target/*.war
+        - target/ROOT/*
