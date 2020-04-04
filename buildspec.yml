@@ -2,19 +2,19 @@
 ---
 version: 0.2
 phases:
+  install:
+    commands:
+      - echo Install started on `date`
   pre_build:
     commands:
-    - echo "Entered the pre-build phase"
+      - echo Pre Build started on `date`
   build:
     commands:
-    - echo "Entered build phase"
-    - mvn package
-    - (cd target && ls)
-    - (cd target/ROOT && ls)
-    
+      - echo Build started on `date`
+      - ./gradlew assemble
   post_build:
     commands:
-    - echo "Entered the post-build phase"
-    artifacts:
-      files:
-        - ROOT/**/*
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - build/libs/*.war
