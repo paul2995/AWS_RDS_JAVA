@@ -1,0 +1,20 @@
+## YAML Template.
+---
+version: 0.2
+phases:
+  pre_build:
+    commands:
+    - echo "Entered the pre-build phase"
+  build:
+    commands:
+    - echo "Entered build phase"
+    - mvn package
+    - (cd target && ls)
+    - (cd target/ROOT && ls)
+    
+  post_build:
+    commands:
+    - echo "Entered the post-build phase"
+    artifacts:
+      files:
+        - ROOT/**/*
