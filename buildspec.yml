@@ -9,10 +9,13 @@ phases:
     commands:
     - echo "Entered build phase"
     - mvn package
-    - mv target/ROOT.WAR ROOT.WAR
+    - ls
+    - (cd target && ls)
+    - (cd target/ROOT && ls)
+    
   post_build:
     commands:
     - echo "Entered the post-build phase"
     artifacts:
       files:
-        - ROOT.WAR
+        - '**/*'
