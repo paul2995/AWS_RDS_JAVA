@@ -15,7 +15,7 @@ public class ConnectionDao {
 	try {
 		Class.forName("com.mysql.jdbc.Driver");  
 		con=DriverManager.getConnection(  
-		"jdbc:mysql://aa1kjbxyumsbyrh.cjcwd5rxmqwk.us-east-2.rds.amazonaws.com:3306/user","root","#Notroot1");
+		"jdbc:mysql://aa1ksgbb5qpqpns.cjcwd5rxmqwk.us-east-2.rds.amazonaws.com:3306/user","root","#Notroot1");
 		}catch(Exception e){ System.out.println(e);}
 	return con;  
 	}
